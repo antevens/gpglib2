@@ -19,7 +19,7 @@ class SignatureParser(Parser):
 
         # Complain if any values haven't been implemented yet
         self.only_implemented(version, (4, ), "version four signature packets")
-        self.only_implemented(signature_type, (0x13, 0x18), "UserId and Subkey binding signatures")
+        self.only_implemented(signature_type, (0x13, 0x10, 0x18), "UserId Generic Certification and Subkey binding signatures")
 
         # Get key algorithm
         algorithm = Mapped.algorithms.keys[public_key_algorithm]
